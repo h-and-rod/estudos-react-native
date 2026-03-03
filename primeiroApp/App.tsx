@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>🎉Bem-vindos à aula!🎉</Text>
+      <Text style={styles.titulo}>🎉Bem-vindos à aula!🎉</Text>
       <Text>📝 Vamos aprender React Native</Text>
       <Text>🚀 Inline styles são fáceis de entender!</Text>
       <Text>🌈🎨 Alterar cores e tamanhos é divertido!</Text>
@@ -21,4 +21,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  titulo: {
+    fontSize: 33,
+    color: "orange"
+  }
 });
