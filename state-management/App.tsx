@@ -16,7 +16,7 @@ export default function App() {
   return (
     <View style={[styles.container, {backgroundColor: taFeliz?'#4b83f4':'#474646'}]}>
       <TouchableOpacity onPress={handleHumor}>
-        <Image style={styles.tamanhoImagem} source={taFeliz ? chicoHappy : chicoSad} />
+        <Image style={taFeliz ? styles.tamanhoImagemFeliz:styles.tamanhoImagemTriste} source={taFeliz ? chicoHappy : chicoSad} />
       </TouchableOpacity>
       <Text>{taFeliz?"Aeeeee" : "Aaaaaa"}</Text>
       <StatusBar style="auto" />
@@ -31,7 +31,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  tamanhoImagem:{
+  tamanhoImagemFeliz:{
+    width: 350,
+    height: 350
+  },
+  tamanhoImagemTriste:{
     width: 250,
     height: 250
   }
