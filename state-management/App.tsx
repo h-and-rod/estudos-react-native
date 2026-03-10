@@ -2,10 +2,20 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import chicoHappy from './assets/chico-happy.jpg';
 import chicoSad from './assets/chico-sad.jpg';
+import { useState } from 'react';
+
 export default function App() {
+
+  const [taFeliz, setTaFeliz] = useState(false)
+
+  function handleHumor(){
+    console.log(taFeliz)
+    setTaFeliz(humor => !humor)
+  }
+
   return (
     <View style={styles.container}>
-      <Image source={chicoSad} />
+      <Image style={styles.tamanhoImagem} source={taFeliz ? chicoHappy : chicoSad} />
       <StatusBar style="auto" />
     </View>
   );
@@ -18,4 +28,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  tamanhoImagem:{
+    width: 250,
+    height: 250
+  }
 });
