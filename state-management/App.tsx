@@ -27,7 +27,7 @@ export default function App() {
       <Text>{taFeliz?"Aeeeee" : "Aaaaaa"}</Text>
       <Text style={styles.contador}>Contador: {contador}</Text>
       <TouchableOpacity onPress={handleHumor} style={styles.botao}>
-        <Text style={styles.textoBotao}>Mudar humor</Text>
+        <Text style={styles.textoBotao}>{taFeliz?"Lembrar de um pepino":"Contar piada"}</Text>
       </TouchableOpacity>
       <StatusBar style="auto" />
     </View>
