@@ -25,6 +25,7 @@ export default function App() {
 
   return (
     <View style={[styles.container, {backgroundColor: taFeliz?'#4b83f4':'#474646'}]}>
+      <Text style={styles.emogis}>{taFeliz?"😂😂😂":"💀"}</Text>
       <TouchableOpacity onPress={handleHumor}>
         <Image
           style={[
@@ -107,5 +108,9 @@ const styles = StyleSheet.create({
     color: '#d6ff1e',
     fontSize: 40,
     fontWeight: 'bold'
+  },
+  emogis: {
+    fontSize: 60,
+    marginBottom: 20
   }
 });
