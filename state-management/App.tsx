@@ -22,7 +22,13 @@ export default function App() {
   return (
     <View style={[styles.container, {backgroundColor: taFeliz?'#4b83f4':'#474646'}]}>
       <TouchableOpacity onPress={handleHumor}>
-        <Image style={taFeliz ? styles.tamanhoImagemFeliz:styles.tamanhoImagemTriste} source={taFeliz ? chicoHappy : chicoSad} />
+        <Image
+          style={[
+            taFeliz ? styles.tamanhoImagemFeliz : styles.tamanhoImagemTriste,
+            taFeliz ? styles.bordaFeliz : styles.bordaTriste,
+          ]}
+          source={taFeliz ? chicoHappy : chicoSad}
+        />
       </TouchableOpacity>
       <Text>{taFeliz?"Aeeeee" : "Aaaaaa"}</Text>
       <Text style={styles.contador}>Contador: {contador}</Text>
@@ -49,6 +55,14 @@ const styles = StyleSheet.create({
   tamanhoImagemTriste:{
     width: 250,
     height: 250
+  },
+  bordaFeliz: {
+    borderWidth: 6,
+    borderColor: '#ffe066',
+  },
+  bordaTriste: {
+    borderWidth: 6,
+    borderColor: '#03080c',
   },
   botao: {
     marginTop: 20,
