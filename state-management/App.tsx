@@ -36,7 +36,7 @@ export default function App() {
           source={taFeliz ? chicoHappy : chicoSad}
         />
       </TouchableOpacity>
-      <Text>{taFeliz?"Aeeeee" : "Aaaaaa"}</Text>
+      <Text style={styles.legenda}>{taFeliz?"Aeeeee" : "Aaaaaa"}</Text>
       <Text style={styles.contador}>Contador: {contador}</Text>
       <TouchableOpacity onPress={handleHumor} style={styles.botaoMudarHumor}>
         <Text style={styles.textoBotaoMudarHumor}>{taFeliz?"Lembrar de um pepino":"Contar piada"}</Text>
@@ -54,6 +54,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  legenda:{
+    marginTop: 10,
+    color: "#fff"
   },
   tamanhoImagemFeliz:{
     width: 350,
