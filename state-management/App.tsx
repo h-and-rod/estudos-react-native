@@ -29,6 +29,7 @@ export default function App() {
       <TouchableOpacity onPress={handleHumor} style={styles.botao}>
         <Text style={styles.textoBotao}>{taFeliz?"Lembrar de um pepino":"Contar piada"}</Text>
       </TouchableOpacity>
+      <Text style={styles.textoMaiorQue10}>{contador>10?"calma lá também":""}</Text>
       <StatusBar style="auto" />
     </View>
   );
@@ -70,4 +71,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#7d7d7e',
     borderRadius: 5
   },
+  textoMaiorQue10: {
+    color: '#d6ff1e',
+    fontSize: 40,
+    fontWeight: 'bold'
+  }
 });
