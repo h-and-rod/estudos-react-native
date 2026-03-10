@@ -19,6 +19,9 @@ export default function App() {
         <Image style={taFeliz ? styles.tamanhoImagemFeliz:styles.tamanhoImagemTriste} source={taFeliz ? chicoHappy : chicoSad} />
       </TouchableOpacity>
       <Text>{taFeliz?"Aeeeee" : "Aaaaaa"}</Text>
+      <TouchableOpacity onPress={handleHumor} style={styles.botao}>
+        <Text style={styles.textoBotao}>Mudar humor</Text>
+      </TouchableOpacity>
       <StatusBar style="auto" />
     </View>
   );
@@ -38,5 +41,17 @@ const styles = StyleSheet.create({
   tamanhoImagemTriste:{
     width: 250,
     height: 250
+  },
+  botao: {
+    marginTop: 20,
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    backgroundColor: '#7d7d7e',
+    borderRadius: 5
+  },
+  textoBotao: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold'
   }
 });
