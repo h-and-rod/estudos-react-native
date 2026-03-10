@@ -7,10 +7,16 @@ import { useState } from 'react';
 export default function App() {
 
   const [taFeliz, setTaFeliz] = useState(false)
+  const [contador, setContador] = useState(0)
 
   function handleHumor(){
     console.log(taFeliz)
     setTaFeliz(humor => !humor)
+    aumentarContador()
+  }
+
+  function aumentarContador(){
+    setContador((valorAtual) => valorAtual + 1)
   }
 
   return (
@@ -19,6 +25,7 @@ export default function App() {
         <Image style={taFeliz ? styles.tamanhoImagemFeliz:styles.tamanhoImagemTriste} source={taFeliz ? chicoHappy : chicoSad} />
       </TouchableOpacity>
       <Text>{taFeliz?"Aeeeee" : "Aaaaaa"}</Text>
+      <Text style={styles.contador}>Contador: {contador}</Text>
       <TouchableOpacity onPress={handleHumor} style={styles.botao}>
         <Text style={styles.textoBotao}>Mudar humor</Text>
       </TouchableOpacity>
@@ -53,5 +60,14 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 16,
     fontWeight: 'bold'
-  }
+  },
+  contador: {
+    color: '#fff',
+    marginTop: 20,
+    fontSize: 30,
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    backgroundColor: '#7d7d7e',
+    borderRadius: 5
+  },
 });
