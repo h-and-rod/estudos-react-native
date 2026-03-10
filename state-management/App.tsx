@@ -18,6 +18,7 @@ export default function App() {
       <TouchableOpacity onPress={handleHumor}>
         <Image style={styles.tamanhoImagem} source={taFeliz ? chicoHappy : chicoSad} />
       </TouchableOpacity>
+      <Text>{taFeliz?"Aeeeee" : "Aaaaaa"}</Text>
       <StatusBar style="auto" />
     </View>
   );
