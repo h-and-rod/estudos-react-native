@@ -19,6 +19,10 @@ export default function App() {
     setContador((valorAtual) => valorAtual + 1)
   }
 
+  function resetarContador(){
+    setContador(0)
+  }
+
   return (
     <View style={[styles.container, {backgroundColor: taFeliz?'#4b83f4':'#474646'}]}>
       <TouchableOpacity onPress={handleHumor}>
@@ -32,9 +36,10 @@ export default function App() {
       </TouchableOpacity>
       <Text>{taFeliz?"Aeeeee" : "Aaaaaa"}</Text>
       <Text style={styles.contador}>Contador: {contador}</Text>
-      <TouchableOpacity onPress={handleHumor} style={styles.botao}>
-        <Text style={styles.textoBotao}>{taFeliz?"Lembrar de um pepino":"Contar piada"}</Text>
+      <TouchableOpacity onPress={handleHumor} style={styles.botaoMudarHumor}>
+        <Text style={styles.textoBotaoMudarHumor}>{taFeliz?"Lembrar de um pepino":"Contar piada"}</Text>
       </TouchableOpacity>
+      <Text style={[styles.botaoResetarContador,styles.textoBotaoResetarContador]} onPress={resetarContador}>Resetar contador</Text>
       <Text style={styles.textoMaiorQue10}>{contador>10?"calma lá também":""}</Text>
       <StatusBar style="auto" />
     </View>
@@ -64,14 +69,26 @@ const styles = StyleSheet.create({
     borderWidth: 6,
     borderColor: '#03080c',
   },
-  botao: {
+  botaoMudarHumor: {
     marginTop: 20,
     paddingHorizontal: 20,
     paddingVertical: 10,
     backgroundColor: '#7d7d7e',
     borderRadius: 5
   },
-  textoBotao: {
+  textoBotaoMudarHumor: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold'
+  },
+  botaoResetarContador: {
+    marginTop: 20,
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    backgroundColor: '#7d7d7e',
+    borderRadius: 5
+  },
+  textoBotaoResetarContador: {
     color: '#fff',
     fontSize: 16,
     fontWeight: 'bold'
@@ -86,6 +103,7 @@ const styles = StyleSheet.create({
     borderRadius: 5
   },
   textoMaiorQue10: {
+    marginTop: 30,
     color: '#d6ff1e',
     fontSize: 40,
     fontWeight: 'bold'
