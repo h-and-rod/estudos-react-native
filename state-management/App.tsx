@@ -14,7 +14,7 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, {backgroundColor: taFeliz?'#4b83f4':'#474646'}]}>
       <TouchableOpacity onPress={handleHumor}>
         <Image style={styles.tamanhoImagem} source={taFeliz ? chicoHappy : chicoSad} />
       </TouchableOpacity>
