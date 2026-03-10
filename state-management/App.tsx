@@ -25,6 +25,7 @@ export default function App() {
 
   return (
     <View style={[styles.container, {backgroundColor: taFeliz?'#4b83f4':'#474646'}]}>
+      <Text style={styles.textoFeliz}>{taFeliz?"ôôô vida boa":""}</Text>
       <Text style={styles.emogis}>{taFeliz?"😂😂😂":"💀"}</Text>
       <TouchableOpacity onPress={handleHumor}>
         <Image
@@ -112,5 +113,11 @@ const styles = StyleSheet.create({
   emogis: {
     fontSize: 60,
     marginBottom: 20
-  }
+  },
+  textoFeliz: {
+    marginTop: 30,
+    color: '#d6ff1e',
+    fontSize: 40,
+    fontWeight: 'bold'
+  },
 });
