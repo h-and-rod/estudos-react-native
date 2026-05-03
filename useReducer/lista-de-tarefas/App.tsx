@@ -49,6 +49,7 @@ export default function App() {
       {state.tasks.map((task: Task) => (
         <View style={styles.inline} key={task.id}>
           <Text style={[styles.enter, { marginTop: 10 }]}>{task.name}</Text>
+          <Button title="remover" onPress={() => handleDeleteTask(task.id)}></Button>
         </View>
       ))}
       <StatusBar style="auto" />
