@@ -15,6 +15,10 @@ export default function App() {
         return {
           tasks: [...state.tasks, { id: Date.now(), name: action.inputValue, isDone: false }],
         };
+      case "delete-task":
+        return{
+          tasks: state.tasks.filter((task: Task) => task.id !== action.id)
+        }
       default:
         return state;
     }
@@ -27,6 +31,10 @@ export default function App() {
     dispatch({ type: "add-new-task", inputValue });
     setInputValue("");
   };
+
+  const handleDeleteTask = (id: number) => {
+    dispatch({type: "delete-task", id});
+  }
 
   return (
     <View style={styles.container}>
