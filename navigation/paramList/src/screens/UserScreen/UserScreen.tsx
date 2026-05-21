@@ -8,10 +8,12 @@ type UserScreenProps = {
 }
 
 export function UserScreen({route}: UserScreenProps){
-    const { username } = route.params
+    const userValues = route.params
+    
     return(
         <View>
-            <Text>Bem vindo: {username}</Text>
+            <Text>Bem vindo {userValues.nome}, vulgo {userValues.apelido}</Text>
+            <Text>Cargo: {userValues.cargo}</Text>
         </View>
     )
 }
